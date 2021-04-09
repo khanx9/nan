@@ -1,0 +1,23 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <archer-header></archer-header>
+  </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    <ng-content select="nb-menu"></ng-content>
+  </nb-sidebar>
+
+  <nb-layout-column style="padding: 0; height: 100%">
+    <div
+      class="app_loading_start"
+      [nbSpinner]="isLoading"
+      nbSpinnerStatus="primary"
+      *ngIf="isLoading"
+    ></div>
+    <ng-content
+      select="router-outlet"
+      style="padding: 0; height: 100%"
+    ></ng-content>
+    <archer-footer></archer-footer>
+  </nb-layout-column>
+</nb-layout>
