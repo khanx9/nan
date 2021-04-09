@@ -16,7 +16,13 @@ export class TranslationService {
   masterData: any[];
   currentLang = 'en_US';
   constructor(private store: Store<AppState>) {
-    store.pipe(select(getLangApp)).subscribe(lang => this.currentLang = lang);
+    store.pipe(select(getLangApp)).subscribe(lang => {
+      if(this.currentLang !== lang) {
+        this.currentLang = lang;
+        // console.log(lang)
+      }
+    });
+
   }
   captions = {
     'vi_VN': vi,

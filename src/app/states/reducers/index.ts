@@ -7,29 +7,29 @@ const langStorage = localStorage.lang;
 
 
 if (!langStorage) {
-  localStorage.setItem('lang', DEFAULT.LANG);
+    localStorage.setItem('lang', DEFAULT.LANG);
 }
 
-const initialState : CommonState = {
-    lang : DEFAULT.LANG,
-    user_id : '',
-    app_loading : false
+const initialState: CommonState = {
+    lang: langStorage || DEFAULT.LANG,
+    user_id: '',
+    app_loading: false
 }
 
-export const CommonReducer = (state = initialState,action : CommonAction) : CommonState => {
-    switch(action.type){
+export const CommonReducer = (state = initialState, action: CommonAction): CommonState => {
+    switch (action.type) {
         // CODING case for getting state here 😎👌👌\
         case ActionTypes.APP_LOADING:
             return {
                 ...state,
-                app_loading : action.payload
+                app_loading: action.payload
             }
-        case ActionTypes.CHANGE_LANGUAGE :
+        case ActionTypes.CHANGE_LANGUAGE:
             return {
                 ...state,
-                lang : action.payload
-            } 
-        default :
-        return state;
+                lang: action.payload
+            }
+        default:
+            return state;
     }
 }

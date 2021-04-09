@@ -7,7 +7,7 @@ import { rootReducers } from './states/rootReducers';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/auth.interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbSpinnerModule, NbSidebarService, NbIconModule, NbToastrService, NbToastrModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbSpinnerModule, NbSidebarService, NbIconModule, NbToastrService, NbToastrModule, NbTreeGridModule, NbTooltipModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FooterComponent, HeaderComponent, LayoutComponent } from './components';
 import { SearchPageComponent } from './pages/search/search.component';
@@ -17,12 +17,15 @@ import { TranslatePipe } from './pipes/translate.pipe';
 import { SignInComponent } from './pages/signin/signin.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { DEFAULT } from './constants';
+import { DatatableComponent } from './components/datatable/datatable.component';
+import { NgxDatatableModule } from '@tusharghoshbd/ngx-datatable';
 
 const NB_MODULES = [
   NbSidebarModule,
   NbSpinnerModule,
   NbIconModule,
-  NbToastrModule.forRoot({})
+  NbToastrModule.forRoot({}),
+  NbTooltipModule
 ]
 
 const NB_SERVICES = [
@@ -33,7 +36,8 @@ const NB_SERVICES = [
 const COMMON_COMPONENTS = [
   LayoutComponent,
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  DatatableComponent,
 ]
 
 const APP_SERVICES = [
@@ -55,7 +59,8 @@ const PAGES = [
     AppComponent,
     ...COMMON_COMPONENTS,
     ...PAGES,
-    ... APP_PIPES
+    ... APP_PIPES,
+    
   ],
   imports: [
     BrowserModule,
@@ -70,6 +75,7 @@ const PAGES = [
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
+    NbTreeGridModule,
     ...NB_MODULES,
   ],
   providers: [

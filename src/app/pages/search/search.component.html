@@ -2,3 +2,5 @@
 {{ "common.auth.login.form.link.member.name" | translate }}
 
 <button (click)="action()">test toast</button>
+
+<archer-datatable (onSelectRow)="getV($event)" [datas]="datatable" [columns]="columns" [columnCustom]="customColumns"></archer-datatable>

@@ -1,0 +1,25 @@
+<table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
+
+    <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+    <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns" class="row__table" (click)="onSelectRowItems(row)"></tr>
+
+    <ng-container *ngFor="let column of columns; let index = index"
+                  [nbTreeGridColumnDef]="column"
+                  [showOn]="getShowOn(index)">
+      <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef style="cursor: pointer;">
+        <span style="cursor: pointer;">{{column}}</span>
+      </th>
+      <td nbTreeGridCell *nbTreeGridCellDef="let row" >{{row.data[column] || '-'}}</td>
+    </ng-container>
+    <ng-container [nbTreeGridColumnDef]="columnCustom[0]">
+        <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>{{columnCustom[0]}}</th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+
+          <div class="btn" *ngFor="let btn of row.data[columnCustom[0]+ 's']"  (click)="btn.action()">
+            <nb-icon [icon]="btn.icon" [nbTooltip]="btn.label"></nb-icon>
+          </div>
+
+        </td>
+      </ng-container>
+
+  </table>
