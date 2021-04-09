@@ -1,0 +1,95 @@
+<div class="example-items-rows">
+  <div class="left__side"></div>
+  <div class="right__side">
+    <div class="home__icon" (click)="goBack()">
+      <nb-icon
+        icon="home-outline"
+        style="color: #fff; font-size: 40px"
+      ></nb-icon>
+    </div>
+    <p class="title__signin">
+      {{ "common.auth.signup.form.title" | translate }}
+    </p>
+    <div class="form">
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.signup.form.email.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            type="text"
+            name="email"
+            id=""
+            [placeholder]="
+              'common.auth.signup.form.email.placeholder' | translate
+            "
+          />
+        </div>
+      </div>
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.signup.form.password.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            [type]="isShowPassword ? 'text' : 'password'"
+            name="password"
+            id=""
+            [placeholder]="
+              'common.auth.signup.form.password.placeholder' | translate
+            "
+          />
+          <nb-icon
+            style="
+              height: 24px;
+              width: 24px;
+              color: #8f9bb3;
+              cursor: pointer;
+              margin-right: 3px;
+            "
+            icon="{{ isShowPassword ? 'eye-off' : 'eye' }}"
+            (click)="toggleShowPass()"
+          ></nb-icon>
+        </div>
+      </div>
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.signup.form.passwordrepeat.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            [type]="isShowPassword ? 'text' : 'password'"
+            name="repeat-password"
+            id=""
+            [placeholder]="
+              'common.auth.signup.form.passwordrepeat.placeholder' | translate
+            "
+          />
+        </div>
+      </div>
+      <div class="term">
+        <input type="checkbox" name="" id="" />
+        <p>{{ "common.auth.signup.form.agree.label" | translate }}</p>
+      </div>
+    </div>
+    <div class="button__submit" *ngIf="!isLoading">
+      <span>{{
+        "common.auth.signup.form.button.createaccount.label" | translate
+      }}</span>
+    </div>
+    <div class="button__submit" *ngIf="isLoading">
+      <img src="../../../../assets/images/loadingGif.gif" *ngIf="isLoading" />
+    </div>
+    <div class="more__link">
+      <p style="cursor: pointer">
+        {{ "common.auth.signup.form.link.forgotpassword.name" | translate }}?
+      </p>
+      <p>
+        {{ "common.auth.signup.form.words.member.name" | translate }}
+        <span>{{
+          "common.auth.signup.form.link.member.name" | translate
+        }}</span>
+      </p>
+    </div>
+  </div>
+</div>

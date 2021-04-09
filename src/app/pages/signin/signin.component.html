@@ -1,0 +1,82 @@
+<div class="login__wrapper">
+  <div class="left__side"></div>
+  <div class="right__side">
+    <div class="home__icon" (click)="goBack()">
+      <nb-icon
+        icon="home-outline"
+        style="color: #fff; font-size: 40px"
+      ></nb-icon>
+    </div>
+    <p class="title__signin">
+      {{ "common.auth.login.form.title" | translate }}
+    </p>
+    <div class="form">
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.login.form.email.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            type="text"
+            name="email"
+            id=""
+            [placeholder]="
+              'common.auth.login.form.email.placeholder' | translate
+            "
+          />
+        </div>
+      </div>
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.login.form.password.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            [type]="isShowPassword ? 'text' : 'password'"
+            name="password"
+            id=""
+            [placeholder]="
+              'common.auth.login.form.password.placeholder' | translate
+            "
+          />
+          <nb-icon
+            style="
+              height: 24px;
+              width: 24px;
+              color: #8f9bb3;
+              cursor: pointer;
+              margin-right: 3px;
+            "
+            icon="{{ isShowPassword ? 'eye-off' : 'eye' }}"
+            (click)="toggleShowPass()"
+          ></nb-icon>
+        </div>
+      </div>
+      <div class="term">
+        <input type="checkbox" name="" id="" />
+        <p>{{ "common.auth.login.form.remember.label" | translate }} ?</p>
+      </div>
+    </div>
+    <div
+      class="button__submit"
+      [nbSpinner]="isLoading"
+      nbSpinnerStatus="primary"
+    >
+      <span
+        >{{ "common.auth.login.form.button.login.label" | translate }}
+      </span>
+    </div>
+    <div class="more__link">
+      <p style="cursor: pointer">
+        {{ "common.auth.login.form.link.forgotpassword.name" | translate }} ?
+      </p>
+      <p>
+        {{ "common.auth.login.form.words.member.name" | translate }}
+        <span
+          >{{ "common.auth.login.form.link.member.name" | translate }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

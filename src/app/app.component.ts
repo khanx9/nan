@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import localeEn from '@angular/common/locales/en';
 import localeVn from '@angular/common/locales/vi';
 import { getLangApp } from './states/selectors/index';
-import { select, Store } from '@ngrx/store';
 import { AppState } from './states/models';
 import { registerLocaleData } from '@angular/common';
+import { select, Store } from '@ngrx/store';
 
 @Component({
   selector: 'archer-app',

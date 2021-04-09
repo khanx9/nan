@@ -11,12 +11,19 @@ if (!langStorage) {
 }
 
 const initialState : CommonState = {
-    lang : DEFAULT.LANG
+    lang : DEFAULT.LANG,
+    user_id : '',
+    app_loading : false
 }
 
 export const CommonReducer = (state = initialState,action : CommonAction) : CommonState => {
     switch(action.type){
         // CODING case for getting state here 😎👌👌\
+        case ActionTypes.APP_LOADING:
+            return {
+                ...state,
+                app_loading : action.payload
+            }
         case ActionTypes.CHANGE_LANGUAGE :
             return {
                 ...state,

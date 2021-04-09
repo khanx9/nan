@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/states/models';
+import { Utils } from 'src/app/utils';
+import { EXCLUDES } from './../../constants/index';
 
 
 @Component({
@@ -12,7 +14,21 @@ import { AppState } from 'src/app/states/models';
 export class LayoutComponent {
     title = '';
     isLoading = false;
+    
+    excludeScreens = EXCLUDES.screens;
+    isHidden = false;
+    
+   
     constructor(private store: Store<AppState>, router: Router) {
+        router.events.subscribe((e) => {
+            if(e instanceof NavigationEnd) {
+                const fragment = Utils.getParamsOnUrl(true) as string;
+                console.log(fragment)
+                if(this.excludeScreens.includes(fragment)){
+                    this.isHidden = true;
+                }
+            }
+        })
     }
 
 }

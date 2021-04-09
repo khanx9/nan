@@ -1,11 +1,11 @@
 <nb-layout windowMode>
-  <nb-layout-header fixed>
+  <nb-layout-header fixed *ngIf="!isHidden">
     <archer-header></archer-header>
   </nb-layout-header>
 
-  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+  <!-- <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
     <ng-content select="nb-menu"></ng-content>
-  </nb-sidebar>
+  </nb-sidebar> -->
 
   <nb-layout-column style="padding: 0; height: 100%">
     <div
@@ -18,6 +18,9 @@
       select="router-outlet"
       style="padding: 0; height: 100%"
     ></ng-content>
-    <archer-footer></archer-footer>
+    
   </nb-layout-column>
+  <nb-layout-footer *ngIf="!isHidden">
+    <archer-footer></archer-footer>
+  </nb-layout-footer>
 </nb-layout>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Utils } from './../../utils/index';
 
 @Component({
     selector: 'archer-header',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-    constructor() { }
+    constructor() { } 
 
-    ngOnInit() { }
+    ngOnInit() {
+    }
 }
