@@ -20,7 +20,9 @@
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             type="text"
             name="email"
+            [formControl]="emailCtrl"
             id=""
+            (key.enter)="handleLogin()"
             [placeholder]="
               'common.auth.login.form.email.placeholder' | translate
             "
@@ -39,6 +41,8 @@
             [placeholder]="
               'common.auth.login.form.password.placeholder' | translate
             "
+            [formControl]="passwordCtrl"
+            (key.enter)="handleLogin()"
           />
           <nb-icon
             style="
@@ -62,6 +66,7 @@
       class="button__submit"
       [nbSpinner]="isLoading"
       nbSpinnerStatus="primary"
+      (click)="handleLogin()"
     >
       <span
         >{{ "common.auth.login.form.button.login.label" | translate }}
@@ -73,7 +78,7 @@
       </p>
       <p>
         {{ "common.auth.login.form.words.member.name" | translate }}
-        <span
+        <span (click)="navigateSignUp()"
           >{{ "common.auth.login.form.link.member.name" | translate }}
         </span>
       </p>

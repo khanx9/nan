@@ -4,10 +4,10 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { rootReducers } from './states/rootReducers';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/auth.interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbSpinnerModule, NbSidebarService, NbIconModule, NbToastrService, NbToastrModule, NbTreeGridModule, NbTooltipModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbSpinnerModule, NbSidebarService, NbIconModule, NbToastrService, NbToastrModule, NbTreeGridModule, NbTooltipModule, NbSelectModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FooterComponent, HeaderComponent, LayoutComponent } from './components';
 import { SearchPageComponent } from './pages/search/search.component';
@@ -19,13 +19,20 @@ import { SignUpComponent } from './pages/signup/signup.component';
 import { DEFAULT } from './constants';
 import { DatatableComponent } from './components/datatable/datatable.component';
 import { NgxDatatableModule } from '@tusharghoshbd/ngx-datatable';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { UserGuardService } from './services/user-guard.service';
+import { ClickOutsideDirective } from './directives/clickout.directive';
+import { ErrorMessageComponent } from './components/errors-messgae/errors-message.component';
 
 const NB_MODULES = [
   NbSidebarModule,
   NbSpinnerModule,
   NbIconModule,
   NbToastrModule.forRoot({}),
-  NbTooltipModule
+  NbTooltipModule,
+  NbSelectModule
 ]
 
 const NB_SERVICES = [
@@ -38,10 +45,18 @@ const COMMON_COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   DatatableComponent,
+  ErrorMessageComponent
 ]
 
 const APP_SERVICES = [
-  TranslationService
+  TranslationService,
+  AuthService,
+  AuthGuardService,
+  UserGuardService
+]
+
+const APP_DIRECTIVES = [
+  ClickOutsideDirective
 ]
 
 const APP_PIPES = [
@@ -60,7 +75,7 @@ const PAGES = [
     ...COMMON_COMPONENTS,
     ...PAGES,
     ... APP_PIPES,
-    
+    ...APP_DIRECTIVES,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +91,9 @@ const PAGES = [
     NbLayoutModule,
     NbEvaIconsModule,
     NbTreeGridModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     ...NB_MODULES,
   ],
   providers: [

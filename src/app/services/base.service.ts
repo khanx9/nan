@@ -17,7 +17,7 @@ export class BaseService {
     baseURL = DEFAULT.BASE_URL;
 
     private setState = (newState: any) => this.state = { ...this.state, ...newState };
-    constructor(private store : Store<AppState>, private httpService : HttpClient) { 
+    constructor(public store : Store<AppState>, private httpService : HttpClient) { 
         store.pipe(select(getCommonProps)).subscribe((props : CommonState) => {
             this.setState(props)
         })

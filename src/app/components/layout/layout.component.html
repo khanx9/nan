@@ -1,6 +1,6 @@
 <nb-layout windowMode>
   <nb-layout-header fixed *ngIf="!isHidden">
-    <archer-header></archer-header>
+    <archer-header style="width: 100%"></archer-header>
   </nb-layout-header>
 
   <!-- <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
@@ -18,7 +18,6 @@
       select="router-outlet"
       style="padding: 0; height: 100%"
     ></ng-content>
-    
   </nb-layout-column>
   <nb-layout-footer *ngIf="!isHidden">
     <archer-footer></archer-footer>

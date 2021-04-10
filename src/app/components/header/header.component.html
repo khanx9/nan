@@ -1,1 +1,37 @@
-<p>headder</p>
+<div class="header__container">
+  <div class="logo">
+    <span>L O G O</span>
+  </div>
+  <div style="display: flex; align-items: center">
+    <nb-select
+      placeholder="Select Showcase"
+      [(selected)]="currentLang"
+      style="margin-right: 20px"
+      (selectedChange)="selectChange($event)"
+    >
+      <nb-select-label
+        >{{ i18nLang + currentLang | translate }}
+      </nb-select-label>
+      <nb-option [value]="lang" *ngFor="let lang of dataLang">{{
+        i18nLang + lang | translate
+      }}</nb-option>
+    </nb-select>
+    <div
+      class="user_area"
+      (click)="openMenu()"
+      (clickOutside)="isOpenMenu = false"
+    >
+      <div class="menu_user" *ngIf="isOpenMenu">
+        <div
+          class="item_menu"
+          *ngFor="let menu of menuUser"
+          (click)="menu.action(); navigate(menu.link); openMenu()"
+        >
+          <nb-icon [icon]="menu.icon"></nb-icon>
+          <span>{{ menu.title | translate }}</span>
+        </div>
+      </div>
+      <img [src]="getAvatarUrl()" alt="" srcset="" />
+    </div>
+  </div>
+</div>

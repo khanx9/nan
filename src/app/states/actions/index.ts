@@ -33,3 +33,12 @@ export class SHOW_TOAST implements Action {
       status: _payload.status, position: NbGlobalLogicalPosition.BOTTOM_END, icon: STATUS_ICON[_payload.status] })
   }
 }
+
+export class STORE_USER_PROFILE implements Action {
+  readonly type = ActionTypes.STORE_USER_PROFILE;
+  public payload: any;
+  // tslint:disable-next-line: variable-name
+  constructor(_payload: any) {
+    this.payload = _payload;
+  }
+}

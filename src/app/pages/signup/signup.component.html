@@ -13,18 +13,54 @@
     <div class="form">
       <div class="input__group">
         <p class="label">
+          {{ "common.auth.signup.form.name.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            type="text"
+            name="name"
+            id=""
+            [formControl]="nameCtrl"
+            [placeholder]="
+              'common.auth.signup.form.name.placeholder' | translate
+            "
+          />
+        </div>
+        <archer-errors-message [errors]="errors.nameCtrl"></archer-errors-message>
+      </div>
+      <div class="input__group">
+        <p class="label">
+          {{ "common.auth.signup.form.username.label" | translate }}
+        </p>
+        <div class="input__container">
+          <input
+            type="text"
+            name="username"
+            id=""
+            [formControl]="usernameCtrl"
+            [placeholder]="
+              'common.auth.signup.form.username.placeholder' | translate
+            "
+          />
+        </div>
+        <archer-errors-message [errors]="errors.usernameCtrl"></archer-errors-message>
+      </div>
+      <div class="input__group">
+        <p class="label">
           {{ "common.auth.signup.form.email.label" | translate }}
         </p>
         <div class="input__container">
           <input
             type="text"
             name="email"
+            [formControl]="emailCtrl"
             id=""
             [placeholder]="
               'common.auth.signup.form.email.placeholder' | translate
             "
           />
         </div>
+        <archer-errors-message [errors]="errors.emailCtrl"></archer-errors-message>
       </div>
       <div class="input__group">
         <p class="label">
@@ -32,6 +68,7 @@
         </p>
         <div class="input__container">
           <input
+            [formControl]="passwordCtrl"
             [type]="isShowPassword ? 'text' : 'password'"
             name="password"
             id=""
@@ -51,6 +88,7 @@
             (click)="toggleShowPass()"
           ></nb-icon>
         </div>
+        <archer-errors-message [errors]="errors.passwordCtrl"></archer-errors-message>
       </div>
       <div class="input__group">
         <p class="label">
@@ -60,19 +98,22 @@
           <input
             [type]="isShowPassword ? 'text' : 'password'"
             name="repeat-password"
+            [formControl]="repeat_passowrdCtrl"
             id=""
             [placeholder]="
               'common.auth.signup.form.passwordrepeat.placeholder' | translate
             "
           />
         </div>
+        <archer-errors-message [errors]="errors.repeat_passowrdCtrl"></archer-errors-message>
       </div>
       <div class="term">
         <input type="checkbox" name="" id="" />
         <p>{{ "common.auth.signup.form.agree.label" | translate }}</p>
       </div>
     </div>
-    <div class="button__submit" *ngIf="!isLoading">
+    <archer-errors-message [errors]="commErrors"></archer-errors-message>
+    <div class="button__submit" *ngIf="!isLoading" (click)="handleSignUp()">
       <span>{{
         "common.auth.signup.form.button.createaccount.label" | translate
       }}</span>
@@ -86,7 +127,7 @@
       </p>
       <p>
         {{ "common.auth.signup.form.words.member.name" | translate }}
-        <span>{{
+        <span (click)="navigateSignIn()">{{
           "common.auth.signup.form.link.member.name" | translate
         }}</span>
       </p>

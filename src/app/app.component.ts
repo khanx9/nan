@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import localeEn from '@angular/common/locales/en';
 import localeVn from '@angular/common/locales/vi';
-import { getLangApp } from './states/selectors/index';
+import { getLangApp, getUserId } from './states/selectors/index';
 import { AppState } from './states/models';
 import { registerLocaleData } from '@angular/common';
 import { select, Store } from '@ngrx/store';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'archer-app',
@@ -14,8 +15,13 @@ import { select, Store } from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
   title = 'nan';
-  constructor(private store: Store<AppState>) {
-
+  constructor(private store: Store<AppState>, private authService : AuthService) {
+   
+    store.pipe(select(getUserId)).subscribe(userId => {
+      if(userId) {
+        const user_profile = authService.getUserProfile();
+      }
+    })
   }
   ngOnInit() {
     this.store.pipe(select(getLangApp)).subscribe((lang: string) => {

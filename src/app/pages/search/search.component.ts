@@ -4,6 +4,8 @@ import { AppState } from 'src/app/states/models';
 import { SHOW_TOAST } from './../../states/actions/index';
 import { NbToastrService, NbTreeGridDataSource } from '@nebular/theme';
 import { TreeNode } from 'src/app/components/datatable/datatable.component';
+import { select } from '@ngrx/store';
+import { getUserProfile } from './../../states/selectors/index';
 
 @Component({
     selector: 'archer-search-page',
@@ -12,7 +14,12 @@ import { TreeNode } from 'src/app/components/datatable/datatable.component';
 })
 
 export class SearchPageComponent implements OnInit {
-    constructor(private store: Store<AppState>, private toastService: NbToastrService) { }
+    constructor(private store: Store<AppState>, private toastService: NbToastrService) { 
+        store.pipe(select(getUserProfile)).subscribe(user_profile => {
+            this.user_profile = user_profile;
+        })
+    }
+    user_profile :any ;
     date = (new Date()).getTime();
     rowData = { x: 1 };
     datatable: TreeNode<User>[] = [

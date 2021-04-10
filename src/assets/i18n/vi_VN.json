@@ -1,222 +1,231 @@
 {
-    "common": {
-      "title": "Hệ thống kết nối",
-      "system": {
-        "key": {
-          "add-new": "THÊM MỚI",
-          "cancel": "HỦY",
-          "clear": "CLEAR",
-          "reset": "RESET",
-          "continue": "TIẾP TỤC",
-          "back": "TRỞ LẠI",
-          "close": "ĐÓNG",
-          "finish": "HOÀN THÀNH",
-          "edit": "CHỈNH SỬA",
-          "save": "LƯU",
-          "set": "THIẾT LẬP",
-          "delete": "XÓA",
-          "save_continue": "LƯU & TIẾP TỤC",
-          "save_close": "LƯU & ĐÓNG",
-          "ok": "ĐỒNG Ý",
-          "skip": "BỎ QUA"
-        },
-        "confirm": {
-          "confirm-delete": "Are you sure you want to delete this item?",
-          "confirm-close": "Would you like not to save the changed data?"
-        },
-        "master-data": {
-          "select": "Select ",
-          "master": "master data",
-          "create-master": "create master data",
-          "edit-master": "edit master data",
-          "rows_count": "Number of rows: ",
-          "class_code": "class code",
-          "is_required": " is required!",
-          "parent_code": "parent code",
-          "code": "code",
-          "name": "name",
-          "active_flag": "active flag",
-          "multi_lang": "multi language",
-          "code_placeholder": "Ex: INDUSTRY_KNOWLEDGE",
-          "name_placeholder": "Ex: Industry Knowledge"
-        },
-        "company": {
-          "title": "Let's stared with a few details about your company",
-          "logo": "logo",
-          "name": "name",
-          "number": "company number",
-          "industry": "industry",
-          "size": "company size",
-          "found": "year found",
-          "tagline": "tagline",
-          "description": "description",
-  
-          "office_address": "office address",
-          "contact": "contact",
-          "email": "email",
-          "website": "website",
-          "representative": "REPRESENTATIVE",
-          "representative_kata": "REPRESENTATIVE (KATAKANA)",
-          "representative_position": "REPRESENTATIVE POSITION",
-          "terms": "Agree to Terms & Conditions",
-          "terms_requierd": "Accept the terms to continue!"
-        }
+  "common": {
+    "title": "Hệ thống kết nối",
+    "system": {
+      "key": {
+        "add-new": "THÊM MỚI",
+        "cancel": "HỦY",
+        "clear": "CLEAR",
+        "reset": "RESET",
+        "continue": "TIẾP TỤC",
+        "back": "TRỞ LẠI",
+        "close": "ĐÓNG",
+        "finish": "HOÀN THÀNH",
+        "edit": "CHỈNH SỬA",
+        "save": "LƯU",
+        "set": "THIẾT LẬP",
+        "delete": "XÓA",
+        "save_continue": "LƯU & TIẾP TỤC",
+        "save_close": "LƯU & ĐÓNG",
+        "ok": "ĐỒNG Ý",
+        "skip": "BỎ QUA"
       },
-      "auth": {
-        "login": {
-          "form": {
-            "title": "Đăng nhập",
-            "password": {
-              "label": "Mật khẩu",
-              "placeholder": "*********"
-            },
-            "email": {
-              "label": "Email",
-              "placeholder": "example@gmail.com"
-            },
-            "remember": {
-              "label": "Lưu đăng nhập"
-            },
-            "button": {
-              "login": {
-                "label": "Đăng nhập"
-              }
-            },
-            "link": {
-              "forgotpassword": {
-                "name": "Quên mật khẩu"
-              },
-              "member": {
-                "name": " Xin chọn mục này"
-              }
-            },
-            "words": {
-              "member": {
-                "name": "Không phải là thành viên?"
-              }
-            },
-            "errors": {
-              "notmatch": {
-                "message": "Email và mật khẩu không khớp"
-              },
-              "no-existed": {
-                "message": "Email không tồn tại. Xin vui lòng chọn email khác"
-              }
-            }
-          }
-        },
-        "reset-password": {
-          "form": {
-            "title": "Khôi phục mật khẩu",
-            "email": {
-              "label": "Email",
-              "placeholder": "example@gmail.com"
-            },
-            "button": {
-              "sendnewpwd": {
-                "label": "Gửi mật khẩu mới"
-              }
-            },
-            "words": {
-              "member": {
-                "name": "Không phải là thành viên?"
-              },
-              "already-member": {
-                "name": "Đã là thành viên?"
-              }
-            },
-            "link": {
-              "member": {
-                "name": " Xin chọn mục này"
-              }
-            }
-          }
-        },
-        "signup": {
-          "form": {
-            "title": "Đăng ký",
-            "email": {
-              "label": "Email",
-              "placeholder": "example@gmail.com"
-            },
-            "password": {
-              "label": "Mật khẩu",
-              "placeholder": "*********"
-            },
-            "passwordrepeat": {
-              "label": "Nhập lại mật khẩu",
-              "placeholder": "*********"
-            },
-            "agree": {
-              "label": "Đồng ý với Điều khoản & Điều kiện"
-            },
-            "button": {
-              "createaccount": {
-                "label": "Tạo tài khoản"
-              }
-            },
-            "link": {
-              "forgotpassword": {
-                "name": "Quên mật khẩu"
-              },
-              "member": {
-                "name": " Xin chọn mục này"
-              }
-            },
-            "words": {
-              "member": {
-                "name": "Đã là thành viên?"
-              }
-            }
-          }
-        },
-        "change-password": {
-          "form": {
-            "title": "Thay đổi mật khẩu",
-            "old-password": {
-              "label": "Mật khẩu cũ",
-              "placeholder": "*********"
-            },
-            "new-password": {
-              "label": "Mật khẩu mới",
-              "placeholder": "*********"
-            },
-            "repeat-password": {
-              "label": "Nhập lại mật khẩu",
-              "placeholder": "*********"
-            },
-            "errors": {
-              "title": "Thông báo",
-              "success": "Cập nhật mật khẩu thành công.",
-              "error": "Cập nhật mật khẩu thất bại."
-            }
-          }
-        }
+      "confirm": {
+        "confirm-delete": "Are you sure you want to delete this item?",
+        "confirm-close": "Would you like not to save the changed data?"
       },
-      "home": {
+      "master-data": {
+        "select": "Select ",
+        "master": "master data",
+        "create-master": "create master data",
+        "edit-master": "edit master data",
+        "rows_count": "Number of rows: ",
+        "class_code": "class code",
+        "is_required": " is required!",
+        "parent_code": "parent code",
+        "code": "code",
+        "name": "name",
+        "active_flag": "active flag",
+        "multi_lang": "multi language",
+        "code_placeholder": "Ex: INDUSTRY_KNOWLEDGE",
+        "name_placeholder": "Ex: Industry Knowledge"
       },
-      "menu-user": {
+      "company": {
+        "title": "Let's stared with a few details about your company",
+        "logo": "logo",
+        "name": "name",
+        "number": "company number",
+        "industry": "industry",
+        "size": "company size",
+        "found": "year found",
+        "tagline": "tagline",
+        "description": "description",
 
-      },
-      "header": {
-
+        "office_address": "office address",
+        "contact": "contact",
+        "email": "email",
+        "website": "website",
+        "representative": "REPRESENTATIVE",
+        "representative_kata": "REPRESENTATIVE (KATAKANA)",
+        "representative_position": "REPRESENTATIVE POSITION",
+        "terms": "Agree to Terms & Conditions",
+        "terms_requierd": "Accept the terms to continue!"
       }
     },
-    "E0001": "Hạng mục này bắt buộc.",
-    "E0002": "Hạng mục này bắt buộc là số.",
-    "E0003": "Vui lòng nhập số bé hơn {0}.",
-    "E0004": "Vui lòng nhập hạng mục {0} nhỏ hơn hoặc bằng hạng mục {1}. ",
-    "E0005": "Giá trị không hợp lệ, vui lòng nhập lại, Giá trị nhập vào phải nằm giữa {0} và {1}.",
-    "E0006": "Giá trị không vượt quá {0}. ",
-    "E0007": "Giá trị không bé hơn {0}. ",
-    "E0008": "Mật khẩu mới và mật khẩu lập lại không khớp với nhau",
-    "E0015": "Mật khẩu cũ không đúng",
-    "I0001": "Đăng ký thông tin thành công.",
-    "I0002": "Cập nhật thông tin thành công.",
-    "I0003": "Xoá thông tin thành công.",
-    "I0004": "Dữ liệu không thay đổi",
-    "I0005": "Xóa thông tin thất bại",
-    "I0006": "Cập nhật thông tin thất bại",
-    "I0007": "Dữ liệu đã tồn tại"
-  }
-  
+    "auth": {
+      "login": {
+        "form": {
+          "title": "Đăng nhập",
+          "password": {
+            "label": "Mật khẩu",
+            "placeholder": "*********"
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "example@gmail.com"
+          },
+          "remember": {
+            "label": "Lưu đăng nhập"
+          },
+          "button": {
+            "login": {
+              "label": "Đăng nhập"
+            }
+          },
+          "link": {
+            "forgotpassword": {
+              "name": "Quên mật khẩu"
+            },
+            "member": {
+              "name": " Xin chọn mục này"
+            }
+          },
+          "words": {
+            "member": {
+              "name": "Không phải là thành viên?"
+            }
+          },
+          "errors": {
+            "notmatch": {
+              "message": "Email và mật khẩu không khớp"
+            },
+            "no-existed": {
+              "message": "Email không tồn tại. Xin vui lòng chọn email khác"
+            }
+          }
+        }
+      },
+      "reset-password": {
+        "form": {
+          "title": "Khôi phục mật khẩu",
+          "email": {
+            "label": "Email",
+            "placeholder": "example@gmail.com"
+          },
+          "button": {
+            "sendnewpwd": {
+              "label": "Gửi mật khẩu mới"
+            }
+          },
+          "words": {
+            "member": {
+              "name": "Không phải là thành viên?"
+            },
+            "already-member": {
+              "name": "Đã là thành viên?"
+            }
+          },
+          "link": {
+            "member": {
+              "name": " Xin chọn mục này"
+            }
+          }
+        }
+      },
+      "signup": {
+        "form": {
+          "title": "Đăng ký",
+          "email": {
+            "label": "Email",
+            "placeholder": "example@gmail.com"
+          },
+          "name": {
+            "label": "Tên nhân viên",
+            "placeholder": "Nguyen Van A"
+          },
+          "username": {
+            "label": "Username",
+            "placeholder": "truongdnn"
+          },
+          "password": {
+            "label": "Mật khẩu",
+            "placeholder": "*********"
+          },
+          "passwordrepeat": {
+            "label": "Nhập lại mật khẩu",
+            "placeholder": "*********"
+          },
+          "agree": {
+            "label": "Đồng ý với Điều khoản & Điều kiện"
+          },
+          "button": {
+            "createaccount": {
+              "label": "Tạo tài khoản"
+            }
+          },
+          "link": {
+            "forgotpassword": {
+              "name": "Quên mật khẩu"
+            },
+            "member": {
+              "name": " Xin chọn mục này"
+            }
+          },
+          "words": {
+            "member": {
+              "name": "Đã là thành viên?"
+            }
+          }
+        }
+      },
+      "change-password": {
+        "form": {
+          "title": "Thay đổi mật khẩu",
+          "old-password": {
+            "label": "Mật khẩu cũ",
+            "placeholder": "*********"
+          },
+          "new-password": {
+            "label": "Mật khẩu mới",
+            "placeholder": "*********"
+          },
+          "repeat-password": {
+            "label": "Nhập lại mật khẩu",
+            "placeholder": "*********"
+          },
+          "errors": {
+            "title": "Thông báo",
+            "success": "Cập nhật mật khẩu thành công.",
+            "error": "Cập nhật mật khẩu thất bại."
+          }
+        }
+      }
+    },
+    "home": {},
+    "menu-user": {
+      "logout": "Đăng xuất",
+      "user-profile": "Hồ sơ"
+    },
+    "header": {},
+    "lang": {
+      "vi_VN": "Tiếng Việt",
+      "en_US": "Tiếng Anh"
+    }
+  },
+  "E0001": "Hạng mục này bắt buộc.",
+  "E0002": "Hạng mục này bắt buộc là số.",
+  "E0003": "Vui lòng nhập số bé hơn {0}.",
+  "E0004": "Vui lòng nhập hạng mục {0} nhỏ hơn hoặc bằng hạng mục {1}. ",
+  "E0005": "Giá trị không hợp lệ, vui lòng nhập lại, Giá trị nhập vào phải nằm giữa {0} và {1}.",
+  "E0006": "Giá trị không vượt quá {0}. ",
+  "E0007": "Giá trị không bé hơn {0}. ",
+  "E0008": "Mật khẩu và mật khẩu lập lại không khớp với nhau",
+  "E0015": "Mật khẩu cũ không đúng",
+  "I0001": "Đăng ký thông tin thành công.",
+  "I0002": "Cập nhật thông tin thành công.",
+  "I0003": "Xoá thông tin thành công.",
+  "I0004": "Dữ liệu không thay đổi",
+  "I0005": "Xóa thông tin thất bại",
+  "I0006": "Cập nhật thông tin thất bại",
+  "I0007": "Dữ liệu đã tồn tại"
+}

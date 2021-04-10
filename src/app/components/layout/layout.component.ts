@@ -14,20 +14,16 @@ import { EXCLUDES } from './../../constants/index';
 export class LayoutComponent {
     title = '';
     isLoading = false;
-    
+
     excludeScreens = EXCLUDES.screens;
     isHidden = false;
-    
-   
+
+
     constructor(private store: Store<AppState>, router: Router) {
         router.events.subscribe((e) => {
-            if(e instanceof NavigationEnd) {
-                const fragment = Utils.getParamsOnUrl(true) as string;
-                console.log(fragment)
-                if(this.excludeScreens.includes(fragment)){
-                    this.isHidden = true;
-                }
-            }
+            const fragment = Utils.getParamsOnUrl(true) as string;
+            // console.log(fragment)
+            this.isHidden = this.excludeScreens.includes(fragment)
         })
     }
 

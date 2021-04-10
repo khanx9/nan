@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthGuardService implements CanActivate, CanActivateChild {
+export class UserGuardService implements CanActivate, CanActivateChild {
 
     constructor(
         private authService: AuthService,
@@ -14,10 +14,10 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
 
       if (!this.authService.isLoggedIn()) {
-        this.router.navigate(['/sign-in']);
-        return false;
-      } else {
         return true;
+      } else {
+          this.router.navigate(['/'])
+        return false;
       }
     }
 

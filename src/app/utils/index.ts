@@ -15,5 +15,13 @@ export class Utils {
 
     static goBack = () => history.back()
 
-    static getToken = () => localStorage.getItem(KEYS.ACCESS_TOKEN)
+    static getToken = () => localStorage.getItem(KEYS.ACCESS_TOKEN);
+
+    static checkRequired = (value) => {
+        return !!value ? null : KEYS.E0001;
+    }
+
+    static checkPwd = (pwd: string, rpwd: string) => {
+        return pwd !== rpwd ? KEYS.E0008 : null;
+    }
 }
